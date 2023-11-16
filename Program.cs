@@ -20,42 +20,70 @@ namespace Pequeño_programa_en_C_
         }
         static void Main(string[] args)
         {   
-            string ElementoAgrado;//Se encargar de almacenar el valor agg
+            string Elemento;//Se encargar de almacenar el valor agg
             Boolean Bol = false;//Se encarga de finalizar el bucles
+            int Priori = 2;
 
             //Crea la variable de la "Cola" para Rellenar o agregar elementos a la cola
             Queue<string> Cola = new Queue<string>();
 
-            //Agrega elementos a la cola
+            //Agrega varios elementos a la cola
             do
             {
-
                 Console.Write("Agregar a cola: ");
-                ElementoAgrado = Console.ReadLine();
+                Elemento = Console.ReadLine();
 
-                Cola.Enqueue(ElementoAgrado);
+                Cola.Enqueue(Elemento);
                 Console.Write("Desea finalizar?True/false: ");
                 Bol = Convert.ToBoolean(Console.ReadLine());
 
             } while (Bol == false);
 
-            //Muestra los elemtos de la cola
-            foreach(string ElementosCola in Cola)
+            //Lee los elemtos de la cola
+            foreach (string ElementosCola in Cola)
             {
                 Console.WriteLine(ElementosCola);
             }
             
+                        
             //Crea la cola de prioridad
             PriorityQueue<string> ColasDePrioridad = new PriorityQueue<string>();
-            ColasDePrioridad.Enqueue("chao", 1);
-            ColasDePrioridad.Enqueue("Hola", 0);
-            ColasDePrioridad.Enqueue("Hola2", 0);
+            //Agrega elementos con prioridad 
+            do
+            {
 
+                Console.Write("Agregar a cola: ");
+                Elemento = Console.ReadLine();
+                Console.Write("Establacer prioridad: ");
+                Priori = Convert.ToInt32(Console.ReadLine());
+
+                ColasDePrioridad.Enqueue(Elemento, Priori);
+
+                Console.Write("Desea finalizar?True/false: ");
+                Bol = Convert.ToBoolean(Console.ReadLine());
+
+            } while (Bol == false);
+
+            //Lee la cola de prioridad 
             ColasDePrioridad.Imprimir();
+            Console.WriteLine("");
+            //Elimina el elemento de mayor prioridad deseado
+            Priori = 0;
+            if(Priori==0)
+            {
+                Console.Write("Digite el elemento a borrar: ");
+                Elemento=Console.ReadLine(); 
+
+                ColasDePrioridad.Dequeue(Elemento,Priori);
+                //Muestra la cola con el elemento de mayor prioridad eliminado
+                ColasDePrioridad.Imprimir();
+            }
+          
 
             Console.Write("Presione una tecla para finalizar...");
             Console.ReadKey(true);
         }
+
         public class PriorityQueue<T>
         {
             /*
@@ -84,7 +112,7 @@ namespace Pequeño_programa_en_C_
             Si no hay ningún elemento en la cola, se lanza una excepción InvalidOperationException.
              */
 
-            public T Dequeue()
+            public T Dequeue(T item, int priority)
             {
                 foreach (KeyValuePair<int, Queue<T>> keyValuePair in _queues)
                 {
@@ -95,6 +123,8 @@ namespace Pequeño_programa_en_C_
                 }
 
                 throw new InvalidOperationException("La cola esta vacia");
+
+
             }
             //El método Imprimir() recorre en iteración el SortedList<int, Queue<T>> y imprime en la consola todos los elemtos.
            public void Imprimir()
@@ -109,6 +139,8 @@ namespace Pequeño_programa_en_C_
                     }
                 }
             }
+
         }
     }
 }
+

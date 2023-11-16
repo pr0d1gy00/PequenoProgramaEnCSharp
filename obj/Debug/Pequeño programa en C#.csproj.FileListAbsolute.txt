@@ -1,0 +1,7 @@
+C:\Users\wueyl\source\repos\Pequeño programa en C#\bin\Debug\Pequeño programa en C#.exe.config
+C:\Users\wueyl\source\repos\Pequeño programa en C#\bin\Debug\Pequeño programa en C#.exe
+C:\Users\wueyl\source\repos\Pequeño programa en C#\bin\Debug\Pequeño programa en C#.pdb
+C:\Users\wueyl\source\repos\Pequeño programa en C#\obj\Debug\Pequeño programa en C#.csproj.AssemblyReference.cache
+C:\Users\wueyl\source\repos\Pequeño programa en C#\obj\Debug\Pequeño programa en C#.csproj.CoreCompileInputs.cache
+C:\Users\wueyl\source\repos\Pequeño programa en C#\obj\Debug\Pequeño programa en C#.exe
+C:\Users\wueyl\source\repos\Pequeño programa en C#\obj\Debug\Pequeño programa en C#.pdb
